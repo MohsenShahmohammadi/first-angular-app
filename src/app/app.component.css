@@ -2,7 +2,7 @@ main{
   width: 90%;
   max-width: 50rem;
   margin: 2.5rem auto;
-  display: grid;
+  display: flex;
   flex-direction: row;
   grid-auto-flow: row;
   gap: 2rem;
@@ -16,4 +16,8 @@ main{
   gap: 0.5rem;
   width: 30%;
   /* overflow: scroll; */
+}
+#content{
+  display: flex;
+  flex: 1;
 }
