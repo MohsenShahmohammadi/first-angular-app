@@ -14,7 +14,7 @@ import { TasksComponent } from './tasks/tasks.component';
 export class AppComponent {
   title = 'first-angular-app';
   users = DUMMY_USERS;
-  userSelectedId='u1';
+  userSelectedId?:string;
 
   get selectedUser() {
     return this.users.find((user) => user.id === this.userSelectedId)!;
