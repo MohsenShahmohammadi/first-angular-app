@@ -1,8 +1,11 @@
+@if (isAddingTask) {
+  <app-new-task (cancel)="onCancelAddTaskHandler()" (add)="onAddTaskHandler($event)"/>
+}
 <section id="task">
   <header>
     <h2>{{ name }}'s Tasks</h2>
     <menu>
-      <button>Add Task</button>
+      <button (click)="onStartAddTaskHandler()">Add Task</button>
     </menu>
   </header>
 
