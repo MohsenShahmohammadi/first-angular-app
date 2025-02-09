@@ -1,5 +1,5 @@
 <div>
-  <button (click)="onSelected()">
+  <button [class.active]="selected" (click)="onSelected()">
     <img
       [src]="imagePath"
       [alt]="user.name"

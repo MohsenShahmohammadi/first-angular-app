@@ -16,7 +16,7 @@ button{
   min-width: 10rem;
   text-align: left;
 }
-button:hover,button:active,active{
+button:hover,button:active,.active{
   background-color: #9965dd;
   color: #150722;
 }

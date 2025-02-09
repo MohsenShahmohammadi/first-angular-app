@@ -3,13 +3,21 @@
   <ul id="users">
     @for(user of users;track user.id){
     <li>
-      <app-user [user]="user" (select)="onSelectedUser($event)" />
+      <app-user
+        [user]="user"
+        (select)="onSelectedUser($event)"
+        [selected]="user.id === userSelectedId"
+      />
     </li>
     }
   </ul>
   <div id="content">
     @if(selectedUser){
-    <app-tasks class="content-task" [name]="selectedUser.name" [UserId]="selectedUser.id"/>
+    <app-tasks
+      class="content-task"
+      [name]="selectedUser.name"
+      [UserId]="selectedUser.id"
+    />
 
     }@else {
     <p>Select a user to see their tasks!</p>

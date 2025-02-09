@@ -8,33 +8,38 @@ import { TaskComponent } from "./task/task.component";
   styleUrl: './tasks.component.css'
 })
 export class TasksComponent {
-  @Input({required: true}) UserId!:string;
-  @Input({required:true}) name!: string;
+  @Input({ required: true }) UserId!: string;
+  @Input({ required: true }) name!: string;
 
-  tasks=[
+  tasks = [
     {
-      id:'t1',
-      userId:'u1',
-      title:'Master Angular',
-      summery:'Learn All the basic and advanced features on angular & how to apply them.',
-      dueDate:'2025-12-31'
+      id: 't1',
+      userId: 'u1',
+      title: 'Master Angular',
+      summery: 'Learn All the basic and advanced features on angular & how to apply them.',
+      dueDate: '2025-12-31'
     },
     {
-      id:'t2',
-      userId:'u3',
-      title:'Build first prototype',
-      summery:'Build a first prototype of the online shop website.',
-      dueDate:'2024-05-31'
+      id: 't2',
+      userId: 'u3',
+      title: 'Build first prototype',
+      summery: 'Build a first prototype of the online shop website.',
+      dueDate: '2024-05-31'
     },
     {
-      id:'t3',
-      userId:'u3',
-      title:'Prepare issue template',
-      summery:'prepare and describe an issue template which will help with project management',
-      dueDate:'2025-06-15'
+      id: 't3',
+      userId: 'u3',
+      title: 'Prepare issue template',
+      summery: 'prepare and describe an issue template which will help with project management',
+      dueDate: '2025-06-15'
     }
   ]
-get selectedUserTasks(){
-  return this.tasks.filter((task)=>task.userId===this.UserId);
-}
+  get selectedUserTasks() {
+    return this.tasks.filter((task) => task.userId === this.UserId);
+  }
+
+  onCompleteTask(id: string) {
+
+    this.tasks= this.tasks.filter((task) => task.id !== id);
+  }
 }
