@@ -21,3 +21,6 @@ main{
   display: flex;
   flex: 1;
 }
+.content-task{
+  flex: 1;
+}
