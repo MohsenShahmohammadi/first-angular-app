@@ -27,6 +27,14 @@ export class TasksService {
     }
   ]
 
+  constructor(){
+const tasks=localStorage.getItem('tasks');
+
+if(tasks){
+  this.tasks=JSON.parse(tasks);
+}
+  }
+
   getUserTasks(userId: string) {
 console.log(userId);
     return this.tasks.filter((task) => task.userId === userId);
@@ -39,9 +47,15 @@ console.log(userId);
       title: taskData.title,
       summery: taskData.summery,
       dueDate: taskData.date
-    })
+    });
+    this.saveTask();
   }
   removeTask(id : string) {
     this.tasks = this.tasks.filter((task) => task.id !== id);
+    this.saveTask();
+  }
+
+  private saveTask(){
+    localStorage.setItem('tasks', JSON.stringify(this.tasks));
   }
 }
